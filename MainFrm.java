@@ -43,6 +43,7 @@ public class MainFrm extends java.awt.Frame {
         }
 
         majArticle();
+	system.out.println("kkkkk");
     }
 
     public void majArticle() {
