@@ -26,6 +26,7 @@ public class MainFrm extends java.awt.Frame {
      */
     public MainFrm() {
         initComponents();
+        System.out.println("Modification de test pour le pull request TP01");
         chargerArticle();
     } // MainFrm
 
