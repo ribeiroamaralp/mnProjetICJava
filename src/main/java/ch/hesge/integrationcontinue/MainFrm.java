@@ -6,7 +6,7 @@
  *
  * @author Patrick RIbeiro - N° du poste: HEG???
  */
-package org.mm.test;
+package ch.hesge.integrationcontinue;
 
 
 import java.util.*;

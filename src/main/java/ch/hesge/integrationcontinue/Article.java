@@ -1,4 +1,4 @@
-package metier;
+package ch.hesge.integrationcontinue;
 
 /**
  * Objet métier représentant un Article

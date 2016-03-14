@@ -1,4 +1,4 @@
-package org.mm.test;
+package ch.hesge.integrationcontinut;
 
 /**
  * Objet métier représentant une Commande
