@@ -10,7 +10,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>ch.hesge.integrationcontinue.MainFrm</mainClass>
+              <mainClass>ch.hesge.projetecole.MainFrm</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -19,7 +19,7 @@
 
   </build>
 
-  <groupId>ch.hesge.integrationcontinue</groupId>
+  <groupId>ch.hesge.projetecole</groupId>
   <artifactId>MonProjet</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>

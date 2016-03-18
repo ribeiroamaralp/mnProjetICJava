@@ -1,4 +1,4 @@
-package ch.hesge.integrationcontinu;
+package ch.hesge.projetecole.outils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

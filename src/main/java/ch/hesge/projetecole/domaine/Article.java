@@ -1,4 +1,4 @@
-package org.mm.test;
+package ch.hesge.projetecole.domaine;
 
 /**
  * Objet métier représentant un Article

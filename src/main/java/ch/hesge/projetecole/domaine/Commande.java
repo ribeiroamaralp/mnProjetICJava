@@ -1,4 +1,4 @@
-package ch.hesge.integrationcontinut;
+package ch.hesge.projetecole.domaine;
 
 /**
  * Objet métier représentant une Commande

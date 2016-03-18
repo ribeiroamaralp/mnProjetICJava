@@ -6,9 +6,11 @@
  *
  * @author Patrick RIbeiro - N° du poste: HEG???
  */
-package ch.hesge.integrationcontinue;
+package ch.hesge.projetecole;
 
-
+import ch.hesge.projetecole.domaine.Article;
+import ch.hesge.projetecole.domaine.Commande;
+import ch.hesge.projetecole.outils.FileStr;
 import java.util.*;
 import java.awt.List;
 import java.text.DecimalFormat;
