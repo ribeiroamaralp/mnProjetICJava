@@ -24,18 +24,21 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>revision</goal>
+                            <goal>revision
+                            </goal>
                          </goals>
                     </execution>
                 </executions>
 		<configuration>
 		<generateGitPropertiesFile>true</generateGitPropertiesFile>
-		<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
-		<format>properties</format>
-		<skipPoms>true</skipPoms>    
+		
+		
+		   
 		</configuration> 
+                
 </plugin>
-        </plugins>
+
+    </plugins>
   </build>
 
   <groupId>ch.hesge.projetecole</groupId>

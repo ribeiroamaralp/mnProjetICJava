@@ -1,4 +1,4 @@
-package ch.hesge.projetecole;
+package ch.hesge.projetecole.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -22,7 +22,7 @@ public class MainFrm extends java.awt.Frame {
     private static final ArrayList listeArticles = new ArrayList();
     private static final ArrayList listeCommandes = new ArrayList();
     private DecimalFormat format = new DecimalFormat("#,##0.00");
-
+    private Commande com=new Commande(null,0);
     /**
      * Constructeur - Initialisation des composants de la fenêtre
      */
@@ -33,6 +33,7 @@ public class MainFrm extends java.awt.Frame {
     } // MainFrm
 
     public void chargerArticle() {
+        System.getProperty(ARTICLES);
         String articles[];
         articles = FileStr.read(ARTICLES);
         lireDonne(articles, listeArticles);
@@ -52,7 +53,26 @@ public class MainFrm extends java.awt.Frame {
             lstArticles.add(listeArticles.get(i).toString());
         }
     }
-
+    public void AjoutCommande(Commande com)
+    {
+        int[] sel = lstArticles.getSelectedIndexes();
+        
+        for (int k = 0; k < sel.length; k++) {
+            Article art = (Article) listeArticles.get(sel[k]);
+             com.setArticle(art);com.setQte(1);
+            int indCom = listeCommandes.indexOf(com);
+            if (indCom == -1) {
+                insert(com, listeCommandes, lstCommandes);   
+            } else {
+                com = (Commande) listeCommandes.get(indCom);
+                com.incQte(1);
+                lstCommandes.replaceItem(com.toString(), indCom);
+            }
+            lstArticles.deselect(sel[k]);
+        }
+        calculeResultats();
+        majList();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -200,23 +220,7 @@ public class MainFrm extends java.awt.Frame {
 
     private void btnAjouterCommandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterCommandeActionPerformed
         
-        int[] sel = lstArticles.getSelectedIndexes();
-        
-        for (int k = 0; k < sel.length; k++) {
-            Article art = (Article) listeArticles.get(sel[k]);
-            Commande com = new Commande(art, 1);
-            int indCom = listeCommandes.indexOf(com);
-            if (indCom == -1) {
-                insert(com, listeCommandes, lstCommandes);   
-            } else {
-                com = (Commande) listeCommandes.get(indCom);
-                com.incQte(1);
-                lstCommandes.replaceItem(com.toString(), indCom);
-            }
-            lstArticles.deselect(sel[k]);
-        }
-        calculeResultats();
-        majList();
+        AjoutCommande(com);
     }//GEN-LAST:event_btnAjouterCommandeActionPerformed
 
      public void majList()
