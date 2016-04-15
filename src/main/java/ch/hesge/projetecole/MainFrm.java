@@ -34,7 +34,6 @@ public class MainFrm extends java.awt.Frame {
 
     public void chargerArticle() {
         String articles[];
-
         articles = FileStr.read(ARTICLES);
         lireDonne(articles, listeArticles);
     }
@@ -44,7 +43,6 @@ public class MainFrm extends java.awt.Frame {
             String info[] = listeVoulu[i].split(";");
             listGen.add(new Article(Integer.parseInt(info[0]), info[1], Double.parseDouble(info[2])));
         }
-
         majArticle();
     }
 
@@ -52,7 +50,6 @@ public class MainFrm extends java.awt.Frame {
         lstArticles.removeAll();
         for (int i = 0; i < listeArticles.size(); i++) {
             lstArticles.add(listeArticles.get(i).toString());
-
         }
     }
 
@@ -210,8 +207,7 @@ public class MainFrm extends java.awt.Frame {
             Commande com = new Commande(art, 1);
             int indCom = listeCommandes.indexOf(com);
             if (indCom == -1) {
-                insert(com, listeCommandes, lstCommandes);
-                
+                insert(com, listeCommandes, lstCommandes);   
             } else {
                 com = (Commande) listeCommandes.get(indCom);
                 com.incQte(1);
@@ -276,12 +272,8 @@ public class MainFrm extends java.awt.Frame {
         int sel[] = lstCommandes.getSelectedIndexes();
         for (int i = 0; i < sel.length; i++) {
             lstCommandes.remove(sel[i]);listeCommandes.remove(sel[i]);
-           
         }
         calculeResultats();
-            
-            
-    
     }
     /**
      * Méthode principale de l'application
