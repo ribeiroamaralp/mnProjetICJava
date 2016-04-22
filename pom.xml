@@ -69,12 +69,6 @@
       <artifactId>plexus-utils</artifactId>
       <version>3.0.22</version>
     </dependency>
-    <dependency>
-  <groupId>org.testng</groupId>
-  <artifactId>testng</artifactId>
-  <version>6.8</version>
-  <scope>test</scope>
-</dependency>
 <dependency>
 	<groupId>commons-logging</groupId>
 	<artifactId>commons-logging</artifactId>
@@ -101,6 +95,11 @@
 	<groupId>org.slf4j</groupId>
 	<artifactId>slf4j-api</artifactId>
 	<version>1.7.19</version>
+</dependency>
+<dependency>
+	<groupId>org.testng</groupId>
+	<artifactId>testng</artifactId>
+	<version>6.9.10</version>
 </dependency>
 
   </dependencies>   

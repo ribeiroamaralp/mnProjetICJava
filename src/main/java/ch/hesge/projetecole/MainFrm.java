@@ -22,7 +22,7 @@ public class MainFrm extends java.awt.Frame {
     private static final ArrayList listeArticles = new ArrayList();
     private static final ArrayList listeCommandes = new ArrayList();
     private DecimalFormat format = new DecimalFormat("#,##0.00");
-    private Commande com=new Commande(null,0);
+   
     /**
      * Constructeur - Initialisation des composants de la fenêtre
      */
@@ -53,13 +53,13 @@ public class MainFrm extends java.awt.Frame {
             lstArticles.add(listeArticles.get(i).toString());
         }
     }
-    public void AjoutCommande(Commande com)
+    public void AjoutCommande()
     {
         int[] sel = lstArticles.getSelectedIndexes();
         
         for (int k = 0; k < sel.length; k++) {
             Article art = (Article) listeArticles.get(sel[k]);
-             com.setArticle(art);com.setQte(1);
+             Commande com=new Commande(art,1);
             int indCom = listeCommandes.indexOf(com);
             if (indCom == -1) {
                 insert(com, listeCommandes, lstCommandes);   
@@ -220,7 +220,7 @@ public class MainFrm extends java.awt.Frame {
 
     private void btnAjouterCommandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterCommandeActionPerformed
         
-        AjoutCommande(com);
+        AjoutCommande();
     }//GEN-LAST:event_btnAjouterCommandeActionPerformed
 
      public void majList()

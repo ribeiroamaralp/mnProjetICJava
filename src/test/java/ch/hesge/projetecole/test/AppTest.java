@@ -1,38 +1,35 @@
 package ch.hesge.projetecole.test;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-
+import ch.hesge.projetecole.domaine.Article;
+import ch.hesge.projetecole.domaine.Commande;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import java.util.*;
+import java.awt.List;
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
+    
 {
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    private ArrayList maListe= new ArrayList();
+    
+ 
+    
+    @Test
+    public  void addArticle()
     {
-        super( testName );
+        Article at = new Article(2,"Lunettes virtuels",23.55);
+        maListe.add(at);
+        for (int i = 0; i < maListe.size(); i++) {
+            System.out.println(maListe.toString());
+        }
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+    
+   
 }
