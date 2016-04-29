@@ -10,17 +10,17 @@ package ch.hesge.projetecole;
 
 import ch.hesge.projetecole.domaine.Article;
 import ch.hesge.projetecole.domaine.Commande;
+import ch.hesge.projetecole.metier.ArticleToken;
 import ch.hesge.projetecole.outils.FileStr;
 import java.util.*;
-import java.awt.List;
 import java.text.DecimalFormat;
 
 public class MainFrm extends java.awt.Frame {
 
     private static final String ARTICLES = "Articles.txt"; /* Nom du fichier de données */
 
-    private static final ArrayList listeArticles = new ArrayList();
-    private static final ArrayList listeCommandes = new ArrayList();
+    private static final List<Article> listeArticles = new ArrayList<>();
+    private static final List<Commande> listeCommandes = new ArrayList<>();
     private DecimalFormat format = new DecimalFormat("#,##0.00");
    
     /**
@@ -39,40 +39,27 @@ public class MainFrm extends java.awt.Frame {
         lireDonne(articles, listeArticles);
     }
 
-    public void lireDonne(String[] listeVoulu, ArrayList listGen) {
+    public void lireDonne(String[] listeVoulu, List<Article> listGen) {
         for (int i = 0; i < listeVoulu.length; i++) {
             String info[] = listeVoulu[i].split(";");
-            listGen.add(new Article(Integer.parseInt(info[0]), info[1], Double.parseDouble(info[2])));
+            listGen.add(new Article(Integer.parseInt(info[0]),info[1],Double.parseDouble(info[2])));
         }
-        majArticle();
+        ArticleToken.majArticle(listGen,lstArticles);
+        
     }
 
-    public void majArticle() {
-        lstArticles.removeAll();
-        for (int i = 0; i < listeArticles.size(); i++) {
-            lstArticles.add(listeArticles.get(i).toString());
+    public void majList()
+     {
+     if (lstCommandes.getItemCount()==0)
+        {
+        btnSupprimerCommande.setEnabled(false);
         }
-    }
-    public void AjoutCommande()
-    {
-        int[] sel = lstArticles.getSelectedIndexes();
-        
-        for (int k = 0; k < sel.length; k++) {
-            Article art = (Article) listeArticles.get(sel[k]);
-             Commande com=new Commande(art,1);
-            int indCom = listeCommandes.indexOf(com);
-            if (indCom == -1) {
-                insert(com, listeCommandes, lstCommandes);   
-            } else {
-                com = (Commande) listeCommandes.get(indCom);
-                com.incQte(1);
-                lstCommandes.replaceItem(com.toString(), indCom);
-            }
-            lstArticles.deselect(sel[k]);
+        else
+        {
+        btnSupprimerCommande.setEnabled(true);
         }
-        calculeResultats();
-        majList();
-    }
+     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -220,24 +207,19 @@ public class MainFrm extends java.awt.Frame {
 
     private void btnAjouterCommandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterCommandeActionPerformed
         
-        AjoutCommande();
+        ArticleToken.AjoutCommande(lstArticles, lstCommandes, listeCommandes, listeArticles);
+        majList();
+        tfTotalCommande.setText(format.format(ArticleToken.calculeResultatsRtournePrix(listeCommandes)));
+        tfNbArticles.setText(Integer.toString(ArticleToken.calculeResultatsRetournNb(listeCommandes)));
     }//GEN-LAST:event_btnAjouterCommandeActionPerformed
 
-     public void majList()
-     {
-     if (lstCommandes.getItemCount()==0)
-        {
-        btnSupprimerCommande.setEnabled(false);
-        }
-        else
-        {
-        btnSupprimerCommande.setEnabled(true);
-        }
-     }
+     
     private void btnSupprimerCommandeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupprimerCommandeActionPerformed
         // TODO add your handling code here:
-        supprimerSelect();
+        ArticleToken.supprimerSelect(lstCommandes,listeCommandes);
         majList();
+        tfTotalCommande.setText(format.format(ArticleToken.calculeResultatsRtournePrix(listeCommandes)));
+        tfNbArticles.setText(Integer.toString(ArticleToken.calculeResultatsRetournNb(listeCommandes)));
     }//GEN-LAST:event_btnSupprimerCommandeActionPerformed
 
     private void listGenitemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listGenitemStateChanged
@@ -251,34 +233,10 @@ public class MainFrm extends java.awt.Frame {
             btnSupprimerCommande.setEnabled(true);
         }
     }//GEN-LAST:event_listGenitemStateChanged
-    private void calculeResultats () {
-    double s = 0;
-    int nb = 0;
-    for (int k = 0; k < listeCommandes.size(); k++) {
-      Commande com = (Commande)listeCommandes.get(k);
-      s += com.getArticle().getPrix() * com.getQte();
-      nb += com.getQte();
-    }
-    tfTotalCommande.setText(format.format(s));
-    tfNbArticles.setText(Integer.toString(nb));
-  }
+    
 
-    public void insert(Comparable comp, ArrayList mod, List lst) {
-        int pos = 0;
-        while ((pos < mod.size()) && (((Comparable) mod.get(pos)).compareTo(comp) <= 0)) {
-            pos++;
-        }
-        mod.add(pos, comp);
-        lst.add(comp.toString(), pos);
-    }
-    public void supprimerSelect()
-    {
-        int sel[] = lstCommandes.getSelectedIndexes();
-        for (int i = 0; i < sel.length; i++) {
-            lstCommandes.remove(sel[i]);listeCommandes.remove(sel[i]);
-        }
-        calculeResultats();
-    }
+    
+    
     /**
      * Méthode principale de l'application
      */
