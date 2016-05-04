@@ -21,7 +21,7 @@ public class FileStr {
   /** Lecture d'un fichier texte dans un String[].
       @param fileName Le nom du fichier texte.
       @return le String[] contenant les lignes du fichier texte. */
-  public static String[] read (String fileName) {
+  public static String read (String fileName) {
     try {
       FileInputStream f = new FileInputStream(fileName);
       StringBuffer b = new StringBuffer(f.available());
@@ -31,11 +31,7 @@ public class FileStr {
         c = f.read();
       }
       f.close();
-      StringTokenizer sT = new StringTokenizer(b.toString(), "\r\n");
-      int nbLig = sT.countTokens();
-      String[] res = new String[nbLig];
-      for (int k = 0; k < nbLig; k++) {res[k] = sT.nextToken();}
-      return res;
+      return b.toString();
     }
     catch (FileNotFoundException e0) {e0.printStackTrace(); return null;}
     catch (IOException e1) {e1.printStackTrace(); return null;}
