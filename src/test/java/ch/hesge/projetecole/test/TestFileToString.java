@@ -39,6 +39,12 @@ public class TestFileToString {
       assertTrue(maListe==null) ; 
     }
     
-   
+   @Test 
+   public void testWrite_In_Fichier()
+   {
+       String[] maChaine={"Antione;34"};
+   FileStr.write(mnChampsTexte, maChaine);
+   assertTrue(FileStr.read(mnChampsTexte).length()>0);
+   }
     
 }

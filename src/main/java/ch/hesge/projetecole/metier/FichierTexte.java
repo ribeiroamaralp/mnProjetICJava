@@ -43,6 +43,12 @@ public class FichierTexte {
   public boolean isNull() {
     return ligneCourante >= listeSize;
   }
+  
+  public boolean ismaLigneArticle() {
+    String ligne = listeLigne[ligneCourante];
+    StringTokenizer strLigne = new StringTokenizer(ligne, ";");
+    return strLigne.countTokens() == 3;
+  }
 
   public void nextLigne() {
     ligneCourante++;

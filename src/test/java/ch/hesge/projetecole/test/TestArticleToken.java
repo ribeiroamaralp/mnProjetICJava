@@ -8,6 +8,7 @@ import static org.testng.Assert.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import static org.testng.Assert.fail;
 import ch.hesge.projetecole.domaine.Article;
 import ch.hesge.projetecole.domaine.Commande;
 import ch.hesge.projetecole.metier.ArticleToken;
@@ -20,6 +21,7 @@ import java.util.*;
 public class TestArticleToken {
     private ListeArticles listeArt;
     private List<Commande> listeCom;
+    private List<Article> listeArticle;
     private Article art;
     private Article art2;
     private Article art3;
@@ -34,6 +36,7 @@ public class TestArticleToken {
   public void setUp() throws Exception {
      listeArt= new ListeArticles();
      listeCom=new ArrayList<>();
+     listeArticle=new ArrayList<>();
      art=new Article(2,"Lunettes virtuels",23.55);
         art2=new Article(3,"Lunettes virtuels",23.55);
         art3=new Article(5,"Lunettes fff",27.55);
@@ -88,6 +91,17 @@ public class TestArticleToken {
     assertEquals(artNew, artRecup);
   }
   
+ @Test
+ public void test_CreationCommande_listeVide()
+ {
+     ArticleToken.AjoutCommande(null, null, listeArticle, listeCom);
+     assertTrue(listeCom.size()==0);
+ }
  
-  
+ @Test
+ public void test_creationCommande_ListeOk()
+ {
+     ArticleToken.AjoutCommande(null, null, listeArticle, listeCom);
+     assertFalse(listeCom.size()>0);
+ }
 }

@@ -51,4 +51,26 @@ public class TestListeArticle {
     
     assertTrue(listeArt.size()==3);
   }
+  
+  @Test
+  public void AffichageArticleTest(){
+    Article art1 = new Article(9,"DCLA 14 Jkt Black",229.1);
+    Article art2 = new Article(2,"Veste de ski Femme HAGLOFS",349);
+    Article art3 = new Article(22,"Pack Jackpot 2014",540);
+    
+    listeArt.add(art1);
+    listeArt.add(art2);
+    listeArt.add(art3);
+    
+    listeArt.afficherArticles();
+    if (listeArt.size()==3)
+    {
+        fail("votre méthode calcule le bon nombre");
+    }
+    else 
+    {
+        fail("votre méthode ne calcule pas le bon nombre");
+    }
+        
+  }
 }
