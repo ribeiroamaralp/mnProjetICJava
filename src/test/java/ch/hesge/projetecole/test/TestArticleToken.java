@@ -88,6 +88,6 @@ public class TestArticleToken {
     assertEquals(artNew, artRecup);
   }
   
-  @Test 
+ 
   
 }

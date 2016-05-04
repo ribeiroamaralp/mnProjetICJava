@@ -14,7 +14,7 @@ import ch.hesge.projetecole.outils.FileStr;
  */
 public class TestFileToString {
     private String mnFichier;
-    private String[] maListe=null;
+    private String maListe;
     private String[] maListeAdd=null;
     
     private String mnChampsTexte="Articles.txt";
@@ -30,7 +30,7 @@ public class TestFileToString {
     public void testRead_siMaListe_est_Remplie()
     {
       maListe=FileStr.read(mnChampsTexte);
-      assertTrue(maListe.length>0) ; 
+      assertTrue(maListe.length()>0) ; 
     }
     @Test
     public void testRead_siMaListe_est_Vide()

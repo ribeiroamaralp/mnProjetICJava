@@ -2,7 +2,6 @@ package ch.hesge.projetecole.test;
 
 import ch.hesge.projetecole.domaine.Article;
 import ch.hesge.projetecole.domaine.Commande;
-import ch.hesge.projetecole.MainFrm;
 import ch.hesge.projetecole.outils.FileStr;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -29,7 +28,6 @@ public class AppTest
     private double sommeDeux;
     private String mnFichier;
     private String mnChampsTexte="Articles.txt";
-    private MainFrm frmmain;
     private String[] maListeDonne;
     private Article art;
     private Article art2;
