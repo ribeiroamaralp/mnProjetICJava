@@ -65,7 +65,7 @@ public class TestListeArticle {
     listeArt.afficherArticles();
     if (listeArt.size()==3)
     {
-        fail("votre méthode calcule le bon nombre");
+        
     }
     else 
     {
