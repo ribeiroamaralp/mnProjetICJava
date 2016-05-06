@@ -48,7 +48,7 @@ public class FichierTexteTest {
   }
   
   @Test(dataProvider = "dataTrue")
-  public void isLigneEquipeTrueTest(String ligne){
+  public void isLigneArticleTrueTest(String ligne){
     fichier = new FichierTexte(ligne);
     if (!fichier.ismaLigneArticle()) {
       fail("votre méthode est vrai");

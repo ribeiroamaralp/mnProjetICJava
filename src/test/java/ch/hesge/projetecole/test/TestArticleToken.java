@@ -60,7 +60,7 @@ public class TestArticleToken {
   public void testQtePrTouteCommandeEstEgaleAmethode()
   {
       int maSomme=2+2+5+7;
-      int nb=ArticleToken.calculeResultatsRetournNb(listeCom);
+      int nb=articleToken.calculeResultatsRetournNb(listeCom);
       assertEquals(maSomme,nb);
   }
   
@@ -68,7 +68,7 @@ public class TestArticleToken {
   public void testPrixPrTouteCommandeEstEgaleAmethode()
   {
       double maSomme=(23.55*2)+(23.55*2)+(27.55*5)+(29.55*7);
-      double nb=ArticleToken.calculeResultatsRtournePrix(listeCom);
+      double nb=articleToken.calculeResultatsRtournePrix(listeCom);
       assertEquals(maSomme,nb);
   }
   

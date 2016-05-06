@@ -25,7 +25,7 @@ public class ArticleToken {
         return new Article(idArt, nomArt, prixArt);
     }
 
-    public static void AjoutCommande(java.awt.List maListAInt, java.awt.List maListCInt, List maListeCom, List maListeArt) {
+    public  void AjoutCommande(java.awt.List maListAInt, java.awt.List maListCInt, List maListeCom, List maListeArt) {
         int[] sel = maListAInt.getSelectedIndexes();
 
         for (int k = 0; k < sel.length; k++) {
@@ -46,7 +46,7 @@ public class ArticleToken {
     }
       
 
-    public static void insert(Comparable comp, List mod, java.awt.List lst) {
+    public  void insert(Comparable comp, List mod, java.awt.List lst) {
         int pos = 0;
         while ((pos < mod.size()) && (((Comparable) mod.get(pos)).compareTo(comp) <= 0)) {
             pos++;
@@ -55,7 +55,7 @@ public class ArticleToken {
         lst.add(comp.toString(), pos);
     }
 
-    public static void supprimerSelect(java.awt.List maListCInt,List maListC) {
+    public  void supprimerSelect(java.awt.List maListCInt,List maListC) {
         int sel[] = maListCInt.getSelectedIndexes();
         for (int i = 0; i < sel.length; i++) {
             maListCInt.remove(sel[i]);
@@ -64,7 +64,7 @@ public class ArticleToken {
         
     }
 
-    public static int calculeResultatsRetournNb(List listeComm) {
+    public  int calculeResultatsRetournNb(List listeComm) {
         double s = 0;
         int nb = 0;
         for (int k = 0; k < listeComm.size(); k++) {
@@ -77,7 +77,7 @@ public class ArticleToken {
         return nb ;
 
     }
-    public static double calculeResultatsRtournePrix(List listeComm) {
+    public  double calculeResultatsRtournePrix(List listeComm) {
         double s = 0;
         int nb = 0;
         for (int k = 0; k < listeComm.size(); k++) {
@@ -91,7 +91,7 @@ public class ArticleToken {
 
     }
 
-    public static void majArticle(List listeGen,java.awt.List maList) {
+    public  void majArticle(List listeGen,java.awt.List maList) {
         maList.removeAll();
         for (int i = 0; i < listeGen.size(); i++) {
             maList.add(listeGen.get(i).toString());
