@@ -1,4 +1,4 @@
-13;Caméra Magicam SD19F Sport;254.5
+13;CamÃˆra Magicam SD19F Sport;254.5
 20;Pack A.R.V.A Zoom;228.9
 25;Thermos Extreme de Ferrino;31.8
 23;Wanderer Primo Black;99.9
@@ -19,8 +19,8 @@
 14;Sick Day 110;549
 11;Le Q-96 Lumen de Salomon;479
 4;ARW 2014;459
-7;Bâtons Remit Black 2014;54.9
-17;Bâtons Team Issue Orange;59
+7;Bâ€štons Remit Black 2014;54.9
+17;Bâ€štons Team Issue Orange;59
 8;T. Rice Pro C2BTX;55
 21;Pack PBJ 2014;380
 22;Pack Jackpot 2014;540
