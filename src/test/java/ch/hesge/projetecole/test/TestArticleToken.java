@@ -91,17 +91,4 @@ public class TestArticleToken {
     assertEquals(artNew, artRecup);
   }
   
- @Test
- public void test_CreationCommande_listeVide()
- {
-     ArticleToken.AjoutCommande(null, null, listeArticle, listeCom);
-     assertTrue(listeCom.size()==0);
- }
- 
- @Test
- public void test_creationCommande_ListeOk()
- {
-     ArticleToken.AjoutCommande(null, null, listeArticle, listeCom);
-     assertFalse(listeCom.size()>0);
- }
 }
