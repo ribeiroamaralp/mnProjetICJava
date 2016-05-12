@@ -24,16 +24,20 @@ public class Mesarticles {
     articlesTk = new ArticleToken();
   }
 
-  public void traiterFichier(String fileName) {
-    String data = FileStr.read(fileName);
-    
+  public void traiterFichier() {
+      String url=this.getClass().getResource("/Articles.txt").getPath();
+    String data = FileStr.read(url);
+    String ligne="";
     fichier = new FichierTexte(data);
 
     while (!fichier.isNull()) {
-      String ligne = fichier.getLigneCourante();
+       ligne = fichier.getLigneCourante();
         creerArticle(ligne);
+        System.out.println(ligne);
+        fichier.nextLigne();
       }
-      fichier.nextLigne();
+    
+      
     }
   
 

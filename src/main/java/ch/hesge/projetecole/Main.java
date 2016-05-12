@@ -13,14 +13,14 @@ import java.io.FileNotFoundException;
  */
 public class Main {
     private static Mesarticles mesArticles;
-    
+    private static  String url="";
     public static void main(String[] args) {
         try{
-        System.getProperty("Articles.txt");
+        
         String fileName = "Articles.txt";
         System.out.println("Traitement des articles dans \"" + fileName + "\" :");
         mesArticles = new Mesarticles();
-        mesArticles.traiterFichier(fileName);
+        mesArticles.traiterFichier();
     } 
         catch (Error e0){e0.getSuppressed();
             

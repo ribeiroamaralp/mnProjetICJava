@@ -21,6 +21,7 @@ public class FichierTexte {
 
     StringTokenizer strLigne = new StringTokenizer(data, "\n\r");
     listeSize = strLigne.countTokens();
+    
     listeLigne = new String[listeSize];
 
     int i = 0;
@@ -50,7 +51,7 @@ public class FichierTexte {
     return strLigne.countTokens() == 3;
   }
 
-  public void nextLigne() {
-    ligneCourante++;
+  public int nextLigne() {
+     return ligneCourante=ligneCourante+1;
   }
 }
