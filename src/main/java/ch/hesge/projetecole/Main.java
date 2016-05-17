@@ -12,17 +12,13 @@ import java.io.FileNotFoundException;
  * @author patrickribeiroamaral
  */
 public class Main {
-    private static Mesarticles mesArticles;
-    private static  String url="";
     public static void main(String[] args) {
-        try{
         
-        String fileName = "Articles.txt";
+        String fileName = args[0];
         System.out.println("Traitement des articles dans \"" + fileName + "\" :");
-        mesArticles = new Mesarticles();
-        mesArticles.traiterFichier();
+        Mesarticles mesArticles = new Mesarticles();
+        mesArticles.traiterFichier(fileName);
     } 
-        catch (Error e0){e0.getSuppressed();
-            
-        }}
+    
 }
+      

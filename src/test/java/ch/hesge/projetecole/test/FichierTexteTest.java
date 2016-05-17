@@ -14,10 +14,12 @@ import static org.testng.Assert.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.mockito.mock.*;
 
 /**
  * @author Patrick Ribeiro
  */
+
 public class FichierTexteTest {
   private FichierTexte fichier;
   
@@ -58,13 +60,20 @@ public class FichierTexteTest {
   @Test
   public void test_si_size_estNull()
   {
-      assertFalse(fichier.isNull());
+      assertFalse(fichier.existeDsListe());
   }
   
   @Test
   public void test_si_Size_estOK()
   {
       assertTrue(fichier.size()>0);
+  }
+  
+  @Test
+  public void test_si_Liste_PLusggrand()
+  {
+      FichierTexte fichier;
+     
   }
 }
 

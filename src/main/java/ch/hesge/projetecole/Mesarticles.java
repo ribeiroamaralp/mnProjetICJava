@@ -17,27 +17,25 @@ public class Mesarticles {
 
   private final ListeArticles listeArticles;
   private final ArticleToken articlesTk;
-  private FichierTexte fichier;
+
 
   public Mesarticles() {
     listeArticles = new ListeArticles();
     articlesTk = new ArticleToken();
   }
 
-  public void traiterFichier() {
-      String url=this.getClass().getResource("/Articles.txt").getPath();
+  public void traiterFichier(String fileName) {
+    String url=this.getClass().getResource("/"+fileName).getPath();
     String data = FileStr.read(url);
     String ligne="";
-    fichier = new FichierTexte(data);
-
-    while (!fichier.isNull()) {
+    FichierTexte fichier = new FichierTexte(data);
+    
+    while (!fichier.existeDsListe()) {
        ligne = fichier.getLigneCourante();
         creerArticle(ligne);
         System.out.println(ligne);
         fichier.nextLigne();
       }
-    
-      
     }
   
 

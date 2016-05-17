@@ -23,14 +23,12 @@ public class FichierTexte {
     listeSize = strLigne.countTokens();
     
     listeLigne = new String[listeSize];
-
     int i = 0;
     while (strLigne.hasMoreTokens()) {
       String uneLigne = strLigne.nextToken();
       listeLigne[i] = uneLigne;
       i++;
     }
-
     ligneCourante = 0;
   }
   public int size() {
@@ -41,7 +39,7 @@ public class FichierTexte {
     return listeLigne[ligneCourante];
   }
 
-  public boolean isNull() {
+  public boolean existeDsListe() {
     return ligneCourante >= listeSize;
   }
   
