@@ -6,6 +6,7 @@
 package ch.hesge.projetecole.metier;
 import ch.hesge.projetecole.domaine.Article;
 import java.util.*;
+
 /**
  *
  * @author patrickribeiroamaral
@@ -14,6 +15,10 @@ public class ListeArticles {
     
     private final List<Article> listeArt;
 
+    public ListeArticles(ArticleToken artiTk) {
+    listeArt = artiTk.getListeArticle();
+  }
+    
   public ListeArticles() {
     listeArt = new ArrayList<> ();
   }

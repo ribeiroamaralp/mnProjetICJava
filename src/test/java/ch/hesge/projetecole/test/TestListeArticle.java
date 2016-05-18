@@ -11,6 +11,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ch.hesge.projetecole.metier.ListeArticles;
 import ch.hesge.projetecole.domaine.Article;
+import ch.hesge.projetecole.metier.ArticleToken;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import java.util.ArrayList;
 
 /**
  *
@@ -19,10 +23,22 @@ import ch.hesge.projetecole.domaine.Article;
 public class TestListeArticle {
 
     private ListeArticles listeArt;
+    ArticleToken arttokmocked = mock(ArticleToken.class);
+    ArrayList lesArticles = new ArrayList();
 
     @BeforeMethod
     public void setUp() throws Exception {
         listeArt = new ListeArticles();
+
+    }
+
+    @Test
+    public void isVideListFalse_test() {
+        lesArticles.add(new Article(3, "Guinness", 3.5));
+        when(arttokmocked.getListeArticle()).thenReturn(lesArticles);
+        listeArt = new ListeArticles(arttokmocked);
+
+        assertFalse(listeArt.size()<=0);
     }
 
     @Test
@@ -53,7 +69,7 @@ public class TestListeArticle {
         assertEquals(listeArt.size(), 3);
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void AffichageArticleTest() {
         Article art1 = new Article(9, "DCLA 14 Jkt Black", 229.1);
         Article art2 = new Article(2, "Veste de ski Femme HAGLOFS", 349);
@@ -64,7 +80,6 @@ public class TestListeArticle {
         listeArt.add(art3);
 
         listeArt.afficherArticles();
-        
 
     }
 }

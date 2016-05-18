@@ -69,11 +69,24 @@ public class FichierTexteTest {
       assertTrue(fichier.size()>0);
   }
   
+  
   @Test
   public void test_si_Liste_PLusggrand()
   {
       FichierTexte fichier;
      
+  }
+   @Test
+  public void ligneCourantTest() {
+    String ligne1 = "7;Iphone 6;159.7";
+    String ligne2 = "9;Samsung Galaxy;300.2";
+    FichierTexte fichier = new FichierTexte(ligne1 + "\n\r" + ligne2);
+
+    assertEquals(fichier.getLigneCourante(), ligne1);
+
+    fichier.nextLigne();
+    
+    assertEquals(fichier.getLigneCourante(), ligne2);
   }
 }
 
