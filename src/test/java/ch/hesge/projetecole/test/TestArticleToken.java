@@ -85,10 +85,11 @@ public class TestArticleToken {
   public void test_creation_article(int id,String nom, double prix) {
     String ligne = id+";"+nom + ";" + prix;
     Article artRecup=articleToken.creerArticle(ligne);
-
+   
     Article artNew = new Article(id, nom, prix);
 
     assertEquals(artNew, artRecup);
   }
+  
   
 }

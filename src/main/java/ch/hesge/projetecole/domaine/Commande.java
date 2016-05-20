@@ -51,6 +51,7 @@ public class Commande implements Comparable {
      * @param obj : object à comparer de même classe Commande
      * @return : -1 plus petit, 0 égal, +1 plus grand
      */
+    @Override
     public int compareTo(Object obj) {
         return article.compareTo(((Commande) obj).article);
     } // compareTo
@@ -61,6 +62,7 @@ public class Commande implements Comparable {
      * @param obj : object à tester de même classe Article
      * @return : true : égalité, false autrement
      */
+    @Override
     public boolean equals(Object obj) {
         return article.equals(((Commande) obj).article);
     } // equals
@@ -70,6 +72,7 @@ public class Commande implements Comparable {
      *
      * @return : la chaîne de caractères de la description de l'objet
      */
+    @Override
     public String toString() {
         return qte + " x " + article.toString() + " = " + (article.getPrix() * qte) + " " + Article.MONNAIE;
     } // toString

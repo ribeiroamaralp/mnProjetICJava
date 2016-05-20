@@ -69,7 +69,7 @@ public class TestListeArticle {
         assertEquals(listeArt.size(), 3);
     }
 
-    @Test(enabled = false)
+    @Test
     public void AffichageArticleTest() {
         Article art1 = new Article(9, "DCLA 14 Jkt Black", 229.1);
         Article art2 = new Article(2, "Veste de ski Femme HAGLOFS", 349);

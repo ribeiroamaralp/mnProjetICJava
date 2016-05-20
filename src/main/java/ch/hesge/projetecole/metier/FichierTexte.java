@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package ch.hesge.projetecole.metier;
-import ch.hesge.projetecole.outils.FileStr;
+
 import java.util.StringTokenizer;
 /**
  *
@@ -50,6 +50,6 @@ public class FichierTexte {
   }
 
   public int nextLigne() {
-     return ligneCourante=ligneCourante+1;
+     return ligneCourante++;
   }
 }

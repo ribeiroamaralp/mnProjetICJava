@@ -27,13 +27,13 @@ public class Mesarticles {
   public void traiterFichier(String fileName) {
     String url=this.getClass().getResource("/"+fileName).getPath();
     String data = FileStr.read(url);
-    String ligne="";
+    String ligne;
     FichierTexte fichier = new FichierTexte(data);
     
     while (!fichier.existeDsListe()) {
        ligne = fichier.getLigneCourante();
         creerArticle(ligne);
-        System.out.println(ligne);
+        System.err.println(ligne);
         fichier.nextLigne();
       }
     }

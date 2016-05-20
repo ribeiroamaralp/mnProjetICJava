@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.StringTokenizer;
+
 
 /**
  * Lecture d'un fichier texte dans un String[]
@@ -15,6 +15,9 @@ import java.util.StringTokenizer;
  * @version Version 1.0 - 01.10.2009
 */
 public class FileStr {
+
+    private FileStr() {
+    }
 
   private static final int EOF = -1;
 

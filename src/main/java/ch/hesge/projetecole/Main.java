@@ -5,17 +5,16 @@
  */
 package ch.hesge.projetecole;
 
-import java.io.FileNotFoundException;
 
 /**
  *
  * @author patrickribeiroamaral
  */
 public class Main {
-    public static void main(String[] args) {
+    private static void main(String[] args) {
         
         String fileName = args[0];
-        System.out.println("Traitement des articles dans \"" + fileName + "\" :");
+        System.err.println("Traitement des articles dans \"" + fileName + "\" :");
         Mesarticles mesArticles = new Mesarticles();
         mesArticles.traiterFichier(fileName);
     } 

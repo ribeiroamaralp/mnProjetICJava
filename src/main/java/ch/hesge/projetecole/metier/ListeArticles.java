@@ -41,7 +41,7 @@ public class ListeArticles {
 
   public void afficherArticles() {
       for (int i = 0; i < listeArt.size(); i++) {
-          System.out.println(listeArt.get(i).toString());
+          System.err.println(listeArt.get(i).toString());
       }
   }
 }

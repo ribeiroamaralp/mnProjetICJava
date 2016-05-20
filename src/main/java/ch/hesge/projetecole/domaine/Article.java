@@ -35,6 +35,7 @@ public class Article implements Comparable {
    * @param obj : object à comparer de même classe Article
    * @return : -1 plus petit, 0 égal, +1 plus grand
    */
+  @Override
   public int compareTo (Object obj) {
     return designation.toUpperCase().compareTo(((Article)obj).designation.toUpperCase()); 
   } // compareTo
@@ -45,8 +46,9 @@ public class Article implements Comparable {
    * @param obj : object à tester de même classe Article
    * @return : true : égalité, false autrement
    */    
+  @Override
   public boolean equals (Object obj) {
-    return (id == ((Article)obj).id);
+    return id == ((Article)obj).id;
   } // equals  
 
   /**
@@ -54,7 +56,8 @@ public class Article implements Comparable {
    * Affichage de la description et du prix du cadeau
    * 
    * @return : la chaîne de caractères de la description de l'objet
-   */    
+   */   
+  @Override
   public String toString () {
     return designation + " : (" + prix + " " + MONNAIE + ")";
   } // toString    

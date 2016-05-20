@@ -46,15 +46,14 @@ public class ArticleToken {
     
 
     public  int calculeResultatsRetournNb(List listeComm) {
-        double s = 0;
+        
         int nb = 0;
         for (int k = 0; k < listeComm.size(); k++) {
             Commande com = (Commande) listeComm.get(k);
-            s += com.getArticle().getPrix() * com.getQte();
+            
             nb += com.getQte();
         }
-    //tfTotalCommande.setText(format.format(s));
-        //tfNbArticles.setText(Integer.toString(nb));
+    
         return nb ;
 
     }
