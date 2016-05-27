@@ -58,4 +58,54 @@ public class TestArticle {
     {
         assertTrue(art.compareTo(art2)==0);
     }
+    
+    @Test
+    public void testArticleRetourneId_si_identique()
+    {
+        assertEquals(art.getId(),art2.getId());
+    }
+    
+    @Test
+    public void testArticleRetourneId_si_not_identique()
+    {
+        assertNotEquals(art3.getId(),art4.getId());
+    }
+    
+    @Test
+    public void testArticleRetourneDesignation_si_identique()
+    {
+        
+        assertEquals(art.getDesignation(),art2.getDesignation());
+    }
+    
+    @Test
+    public void testArticleRetourneDesignation_si_not_identique()
+    {
+        assertNotEquals(art3.getDesignation(),art4.getDesignation());
+    }
+    
+    @Test
+    public void testArticleRetournePrix_si_identique()
+    {
+        
+        assertEquals(art.getPrix(),art2.getPrix());
+    }
+    
+    @Test
+    public void testArticleRetournePrix_si_not_identique()
+    {
+        assertNotEquals(art3.getPrix(),art4.getPrix());
+    }
+    
+    @Test
+    public void testArticleString_si_Identique()
+    {
+    assertEquals(art.toString(),art2.toString());
+    }
+    
+    @Test
+    public void testArticleString_si_not_identique()
+    {
+        assertNotEquals(art3.toString(),art4.toString());
+    }
 }

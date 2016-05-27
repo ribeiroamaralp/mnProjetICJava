@@ -47,7 +47,7 @@ public class Article implements Comparable {
    * @return : true : égalité, false autrement
    */    
   @Override
-  public boolean equals (Object obj) {
+  public boolean equals (Object obj) { //NOSONAR
     return id == ((Article)obj).id;
   } // equals  
 

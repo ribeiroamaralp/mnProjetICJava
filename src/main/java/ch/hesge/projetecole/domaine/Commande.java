@@ -63,7 +63,7 @@ public class Commande implements Comparable {
      * @return : true : égalité, false autrement
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj) { //NOSONAR
         return article.equals(((Commande) obj).article);
     } // equals
 

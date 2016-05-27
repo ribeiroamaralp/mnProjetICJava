@@ -63,4 +63,49 @@ public class TestCommande {
     {
         assertTrue(comm.compareTo(comm2)==0);
     }
+    
+    @Test
+    public void testComModifierQte_juste()
+    {
+    comm.setQte(4);
+    assertEquals(comm.getQte(),4);
+    }
+    
+    @Test
+    public void testComModifierQte_faux()
+    {
+    comm.setQte(4);
+    assertNotEquals(comm.getQte(),6);
+    }
+    
+    @Test
+    public void testComIncQte_juste()
+    {
+    comm.setQte(4);
+    comm.incQte(1);
+    assertEquals(comm.getQte(),5);
+    }
+    
+    @Test
+    public void testComIncQte_faux()
+    {
+    comm.setQte(4);
+    comm.incQte(1);
+    assertNotEquals(comm.getQte(),6);
+    }
+    
+    
+    @Test
+    public void testComArticleRetourne_juste()
+    {
+    comm.setArticle(art3);
+    assertEquals(comm.getArticle(),comm3.getArticle());
+    }
+    
+    @Test
+    public void testComArticleRetourne_faux()
+    {
+    comm.setArticle(art2);
+    assertNotEquals(comm.getArticle(),comm3.getArticle());
+    }
 }
